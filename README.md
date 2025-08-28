@@ -1,5 +1,5 @@
 # MC-Log-Monitor-Bot
-Monitoring logs from Minecraft online server with real-time Discord bot notifications.
-Считывание логов из Майнкрафт онлайн сервера и обрабатывание их в интерактивном Дискорд боте в режиме реального времени.
+Monitoring logs from Minecraft online server with real-time Discord bot notifications.<br>
+Считывание логов Майнкрафт онлайн сервера и обработка их в Discord-боте в режиме реального времени.
 
 
