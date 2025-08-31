@@ -16,9 +16,7 @@ public class Main {
         Logger logger = LoggerFactory.getLogger(Main.class);
 
         // Создание экземпляра класса для считывания данных из .env файла
-        Dotenv dotenv = Dotenv.configure()
-                .directory("C:\\Users\\user\\Desktop\\mc-monitoring-system\\log-tailer-service\\.env")
-                .load();
+        Dotenv dotenv = Dotenv.load();
 
         // Считываем путь до логов сервера и настраиваем задержку считывания в 1 секунду
         String serverLogPath = dotenv.get("SERVER-LOG-PATH");

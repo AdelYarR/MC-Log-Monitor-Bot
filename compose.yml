@@ -1,0 +1,52 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgresdb
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=rootroot
+      - POSTGRES_DB=minecraft_monitoring_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - C:\Users\user\Desktop\mc-monitoring-system\discord-bot-service\sqldump:/docker-entrypoint-initdb.d
+    networks:
+      - dbnet
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq-container
+    hostname: rabbitmq
+    ports:
+      - "15672:15672"
+    networks:
+      - dbnet
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "check_running"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  log-tailer:
+    build: ./log-tailer-service/
+    image: log-tailer-service:0.4
+    container_name: log-tailer
+    networks:
+      - dbnet
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  discord-bot:
+    build: ./discord-bot-service/
+    image: discord-bot-service:0.1
+    container_name: discord-bot
+    networks:
+      - dbnet
+    depends_on:
+      - postgres
+      - log-tailer
+
+networks:
+  dbnet:
+    driver: bridge

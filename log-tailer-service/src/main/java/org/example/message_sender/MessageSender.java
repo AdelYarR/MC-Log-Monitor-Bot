@@ -30,7 +30,14 @@ public class MessageSender {
         try {
             connection = factory.newConnection();
             channel = connection.createChannel();
-            channel.queueDeclarePassive(QUEUE_NAME);
+//            channel.queueDeclarePassive(QUEUE_NAME);
+            channel.queueDeclare(
+                    "server-logs-queue",
+                    true,
+                    false,
+                    false,
+                    null
+            );
             logger.info("Connected to RabbitMQ and found queue: " + QUEUE_NAME);
         } catch (IOException | TimeoutException err) {
             throw new RuntimeException("Failed to initialize message sender: " + err.getMessage());
@@ -40,6 +47,7 @@ public class MessageSender {
     public void sendMessage(String message) {
         try {
             channel.basicPublish("", QUEUE_NAME, null, message.getBytes());
+            logger.info("Sent message to RabbitMQ queue: " + message);
         } catch (IOException err) {
             throw new RuntimeException(err);
         }

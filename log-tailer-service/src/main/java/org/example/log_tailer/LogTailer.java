@@ -1,6 +1,8 @@
 package org.example.log_tailer;
 
 import org.example.message_sender.MessageSender;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
@@ -11,6 +13,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class LogTailer {
+    private final static Logger logger = LoggerFactory.getLogger(LogTailer.class);
 
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     private final MessageSender messageSender;
@@ -26,6 +29,7 @@ public class LogTailer {
     }
 
     public void start() {
+        logger.info("Log tailer started sending messages...");
         scheduler.scheduleWithFixedDelay(() -> {
             try (RandomAccessFile raf = new RandomAccessFile(filePath, "r")) {
                 raf.seek(offset);
