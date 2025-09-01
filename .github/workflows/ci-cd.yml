@@ -1,0 +1,25 @@
+name: CI/CD
+
+on: 
+  push:
+    branches:
+    - 'main'
+
+jobs:
+  test-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run tests for Log Tailer Service
+        run: cd log-tailer-service && mvn test
+
+      - name: Run tests for Discord Bot Service
+        run: cd discord-bot-service && mvn test
+
+      - name: Build jar file for Log Tailer Service
+        run: cd log-tailer-service && mvn clean package -dskipTests
+
+      - name: Build jar file for Discord Bot Service
+        run: cd discord-bot-service && mvn clean package -dskipTests
+
+
+
