@@ -9,6 +9,8 @@ jobs:
   test-build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v5
+
       - name: Run tests for Log Tailer Service
         run: cd log-tailer-service && mvn test
 
