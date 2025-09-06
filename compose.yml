@@ -38,8 +38,7 @@ services:
         condition: service_healthy
 
   discord-bot:
-    build: ./discord-bot-service/
-    image: discord-bot-service:0.1
+    image: discord-bot-spring-service:0.0.1
     container_name: discord-bot
     networks:
       - dbnet
