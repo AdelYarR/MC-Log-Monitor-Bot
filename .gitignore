@@ -1,0 +1,80 @@
+discord-bot-spring-service/HELP.md
+discord-bot-spring-service/target/
+discord-bot-spring-service/mvn/wrapper/maven-wrapper.jar
+!discord-bot-spring-service/**/src/main/**/target/
+!discord-bot-spring-service/**/src/test/**/target/
+
+### STS ###
+discord-bot-spring-service/.apt_generated
+discord-bot-spring-service/.classpath
+discord-bot-spring-service/.factorypath
+discord-bot-spring-service/.project
+discord-bot-spring-service/.settings
+discord-bot-spring-service/.springBeans
+discord-bot-spring-service/.sts4-cache
+
+### IntelliJ IDEA ###
+discord-bot-spring-service/.idea
+discord-bot-spring-service/*.iws
+discord-bot-spring-service/*.iml
+discord-bot-spring-service/*.ipr
+
+### NetBeans ###
+discord-bot-spring-service/nbproject/private/
+discord-bot-spring-service/nbbuild/
+discord-bot-spring-service/dist/
+discord-bot-spring-service/nbdist/
+discord-bot-spring-service/.nb-gradle/
+discord-bot-spring-service/build/
+!discord-bot-spring-service/**/src/main/**/build/
+!discord-bot-spring-service/**/src/test/**/build/
+
+### VS Code ###
+discord-bot-spring-service/.vscode/
+
+discord-bot-spring-service/src/main/resources/application-secret.properties
+
+log-tailer-service/target/
+log-tailer-service/!.mvn/wrapper/maven-wrapper.jar
+log-tailer-service/!**/src/main/**/target/
+log-tailer-service/!**/src/test/**/target/
+
+### IntelliJ IDEA ###
+log-tailer-service/.idea/modules.xml
+log-tailer-service/.idea/jarRepositories.xml
+log-tailer-service/.idea/compiler.xml
+log-tailer-service/.idea/libraries/
+log-tailer-service/*.iws
+log-tailer-service/*.iml
+log-tailer-service/*.ipr
+
+### Eclipse ###
+log-tailer-service/.apt_generated
+log-tailer-service/.classpath
+log-tailer-service/.factorypath
+log-tailer-service/.project
+log-tailer-service/.settings
+log-tailer-service/.springBeans
+log-tailer-service/.sts4-cache
+
+### NetBeans ###
+log-tailer-service/nbproject/private/
+log-tailer-service/nbbuild/
+log-tailer-service/dist/
+log-tailer-service/nbdist/
+log-tailer-service/.nb-gradle/
+log-tailer-service/build/
+log-tailer-service/!**/src/main/**/build/
+log-tailer-service/!**/src/test/**/build/
+
+### VS Code ###
+log-tailer-service/.vscode/
+
+### Mac OS ###
+log-tailer-service/.DS_Store
+
+log-tailer-service/.env
+
+log-tailer-service/dependency-reduced-pom.xml
+
+
