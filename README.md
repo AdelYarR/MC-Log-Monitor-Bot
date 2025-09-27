@@ -73,14 +73,6 @@ spring.rabbitmq.queue-name=server-logs-queue
 
 # Discord Bot Configuration
 discordbot.token=<токен Discord-бота>
-В log-tailer-service требуется создать .env файл с путём до логов SERVER-LOG-PATH и хостом RABBITMQ-HOST.
-В discord-bot-spring-service/src/main/resources/application.properties требуется добавить поля:
-spring.datasource.username=<имя пользователя БД>
-spring.datasource.password=<пароль пользователя БД>
-spring.rabbitmq.username=<имя пользователя RabbitMQ Management>
-spring.rabbitmq.password=<пароль пользователя RabbitMQ Management>
-spring.rabbitmq.queue-name=server-logs-queue
-discordbot.token=<токен Discord-бота>
 ```
 
 #### 3. Запуск Docker compose
