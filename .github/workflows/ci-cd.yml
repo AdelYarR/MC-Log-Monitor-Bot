@@ -15,13 +15,13 @@ jobs:
         run: cd log-tailer-service && mvn test
 
       - name: Run tests for Discord Bot Service
-        run: cd spring-service && mvn test
+        run: cd discord-bot-spring-service && mvn test
 
       - name: Build jar file for Log Tailer Service
         run: cd log-tailer-service && mvn clean package
 
       - name: Build jar file for Discord Bot Service
-        run: cd spring-service && mvn clean package
+        run: cd discord-bot-spring-service && mvn clean package
 
 
 
